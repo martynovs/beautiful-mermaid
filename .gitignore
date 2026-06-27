@@ -28,3 +28,10 @@ npm-debug.log*
 
 # Test coverage
 coverage/
+
+# Tooling
+.claude/
+
+# Scratch
+tmp/
+docs/

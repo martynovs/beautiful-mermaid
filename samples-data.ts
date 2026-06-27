@@ -1295,4 +1295,490 @@ export const samples: Sample[] = [
     line [72, 65, 58, 50, 43, 36, 29, 22, 14, 0]`,
     options: { interactive: true },
   },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  //  EXTENDED DIAGRAM TYPES (extend-chart-types) — grouped by type
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    title: 'Quadrant Chart',
+    category: 'Quadrant',
+    description: 'Two-axis tradeoff map with four labelled regions.',
+    source: `quadrantChart
+    title Reach vs Engagement
+    x-axis Low Reach --> High Reach
+    y-axis Low Engagement --> High Engagement
+    quadrant-1 Expand
+    quadrant-2 Promote
+    quadrant-3 Re-evaluate
+    quadrant-4 Improve
+    Campaign A: [0.3, 0.6]
+    Campaign B: [0.45, 0.23]
+    Campaign C: [0.57, 0.69]`,
+  },
+
+  {
+    title: 'Block Diagram',
+    category: 'Block',
+    description: 'A multi-tier system as a uniform grid with edges.',
+    source: `block-beta
+    columns 4
+    Client["Client"] space space space
+    API["API Gateway"] Auth["Auth"] Cache["Cache"] Queue["Queue"]
+    DB["Database"] space space Worker["Worker"]
+    Client --> API
+    API --> Auth
+    API --> Cache
+    API --> DB
+    Queue --> Worker`,
+  },
+
+  {
+    title: 'Pie: Browser Share',
+    category: 'Pie',
+    description: 'Plain pie (no legend values) with many slices.',
+    source: `pie title Browser Market Share
+    "Chrome" : 64
+    "Safari" : 19
+    "Edge" : 5
+    "Firefox" : 3
+    "Other" : 9`,
+  },
+
+  {
+    title: 'Timeline: Web History',
+    category: 'Timeline',
+    description: 'Multiple events per period.',
+    source: `timeline
+    title History of the Web
+    1991 : First website
+    2004 : Gmail : Facebook
+    2008 : Chrome : GitHub
+    2015 : ES6 : React Native`,
+  },
+
+  {
+    title: 'Packet Diagram',
+    category: 'Packet',
+    description: 'Bit/byte fields laid out on a 32-bit grid.',
+    source: `packet
+    0-15: "Source Port"
+    16-31: "Destination Port"
+    32-63: "Sequence Number"`,
+  },
+
+  {
+    title: 'Radar: Product Scores',
+    category: 'Radar',
+    description: 'Three series across five axes.',
+    source: `radar-beta
+    title Product Comparison
+    axis price["Price"], perf["Performance"], ux["UX"], support["Support"], docs["Docs"]
+    curve us["Us"]{4, 5, 4, 3, 5}
+    curve them["Competitor"]{5, 3, 2, 4, 2}`,
+  },
+
+  {
+    title: 'Mindmap',
+    category: 'Mindmap',
+    description: 'Indented tree rendered as a mind map.',
+    source: `mindmap
+  root((Beautiful Mermaid))
+    Rendering
+      SVG
+      ASCII
+    Themes
+      Dark
+      Light`,
+  },
+
+  {
+    title: 'Mindmap: Shapes',
+    category: 'Mindmap',
+    description: 'Different node shapes per branch.',
+    source: `mindmap
+  root((Project))
+    Goals
+      [Ship v1]
+      (Grow users)
+    Risks
+      ))Scope creep((
+    Team
+      Design
+      Engineering`,
+  },
+
+  {
+    title: 'Tree View',
+    category: 'Tree View',
+    description: 'Directory-style hierarchy with folder/file glyphs.',
+    source: `treeView-beta
+  "src/"
+    "index.ts"
+    "parser.ts"
+  "docs/"
+    "guide.md"`,
+  },
+
+  {
+    title: 'Journey: Online Shopping',
+    category: 'Journey',
+    description: 'Multi-actor satisfaction journey.',
+    source: `journey
+    title Online Shopping
+    section Browse
+      Search products : 4: Customer
+      Read reviews : 3: Customer
+    section Checkout
+      Add to cart : 5: Customer
+      Enter payment : 2: Customer, System
+      Confirm order : 5: Customer`,
+  },
+
+  {
+    title: 'Treemap: Codebase',
+    category: 'Treemap',
+    description: 'Deeper hierarchy with nested branches.',
+    source: `treemap
+  "Repo"
+    "src"
+      "renderers": 60
+      "parsers": 45
+      "layout": 30
+    "tests": 40
+    "docs": 15`,
+  },
+
+  {
+    title: 'Venn: Three Sets',
+    category: 'Venn',
+    description: 'Three overlapping sets.',
+    source: `venn-beta
+    title Skills
+    set Design
+    set Code
+    set Product
+    union Design, Code
+    union Code, Product`,
+  },
+
+  {
+    title: 'Wardley Map',
+    category: 'Wardley',
+    description: 'A value chain with anchors and an evolution path.',
+    source: `wardley
+    title Tea Shop
+    anchor Business [0.95, 0.55]
+    component Cup [0.84, 0.30]
+    component Tea [0.70, 0.55]
+    component Hot_Water [0.60, 0.70]
+    component Kettle [0.45, 0.78]
+    component Power [0.20, 0.92]
+    Business -> Cup
+    Cup -> Tea
+    Tea -> Hot_Water
+    Hot_Water -> Kettle
+    Kettle -> Power`,
+  },
+
+  {
+    title: 'Ishikawa (Fishbone)',
+    category: 'Ishikawa',
+    description: 'Cause-and-effect diagram with categories and causes.',
+    source: `ishikawa
+    Late Delivery
+        Process
+            Slow approvals
+            Manual steps
+        People
+            Understaffed`,
+  },
+
+  {
+    title: 'Kanban Board',
+    category: 'Kanban',
+    description: 'Columns of cards.',
+    source: `kanban
+    todo[To Do]
+        t1[Design spec]
+        t2[Write tests]
+    doing[In Progress]
+        t3[Build parser]
+    done[Done]
+        t4[Setup CI]`,
+  },
+
+  {
+    title: 'Kanban: With Assignees',
+    category: 'Kanban',
+    description: 'Cards with assignee/priority metadata.',
+    source: `kanban
+    backlog[Backlog]
+        b1[Spec the parser]@{ assigned: "Ana", priority: "High" }
+        b2[Design icons]@{ assigned: "Lee" }
+    doing[In Progress]
+        d1[Wire dispatch]@{ assigned: "Sam", priority: "High" }
+    done[Done]
+        e1[Identity gate]`,
+  },
+
+  {
+    title: 'Requirement: Verification',
+    category: 'Requirement',
+    description: 'Multiple requirements with satisfy/verify relations.',
+    source: `requirementDiagram
+    requirement speed {
+      id: 1
+      text: render under 50ms
+      risk: high
+      verifymethod: test
+    }
+    functionalRequirement themes {
+      id: 2
+      text: support theming
+    }
+    element renderer {
+      type: module
+    }
+    element suite {
+      type: tests
+    }
+    renderer - satisfies -> speed
+    renderer - satisfies -> themes
+    suite - verifies -> speed`,
+  },
+
+  {
+    title: 'Sankey: Energy Flow',
+    category: 'Sankey',
+    description: 'Multi-stage energy distribution.',
+    source: `sankey
+    Solar,Grid,30
+    Wind,Grid,45
+    Coal,Grid,25
+    Grid,Residential,50
+    Grid,Commercial,30
+    Grid,Industrial,20`,
+  },
+
+  {
+    title: 'Gantt Chart',
+    category: 'Gantt',
+    description: 'Scheduled tasks with dependencies on a date axis.',
+    source: `gantt
+    title Roadmap
+    dateFormat YYYY-MM-DD
+    section Design
+    Research : r1, 2024-01-01, 7d
+    Spec : after r1, 5d
+    section Build
+    Parser : after r1, 10d`,
+  },
+
+  {
+    title: 'Gantt: Release Plan',
+    category: 'Gantt',
+    description: 'Statuses (done/active/crit) and a milestone.',
+    source: `gantt
+    title Release 2.0
+    dateFormat YYYY-MM-DD
+    section Planning
+    Kickoff : done, k1, 2024-02-01, 3d
+    Scoping : active, after k1, 5d
+    section Delivery
+    Build : crit, b1, after k1, 12d
+    QA : after b1, 5d
+    Launch : milestone, after b1, 0d`,
+  },
+
+  {
+    title: 'Git: Feature + Release',
+    category: 'Git Graph',
+    description: 'Branches, tags, and a merge back to main.',
+    source: `gitGraph
+    commit id: "init"
+    commit id: "setup" tag: "v0.1"
+    branch feature
+    commit id: "ui"
+    commit id: "logic"
+    checkout main
+    commit id: "hotfix"
+    merge feature tag: "v1.0"`,
+  },
+
+  {
+    title: 'C4 Context',
+    category: 'C4',
+    description: 'People and systems with relationships.',
+    source: `C4Context
+    Person(user, "Customer", "A user of the product")
+    System(app, "Application", "The product")
+    System_Ext(email, "Email System")
+    Rel(user, app, "Uses")
+    Rel(app, email, "Sends via")`,
+  },
+
+  {
+    title: 'C4: Container View',
+    category: 'C4',
+    description: 'A system boundary with containers.',
+    source: `C4Context
+    Person(user, "User", "An end user")
+    System_Boundary(app, "Web App") {
+      Container(spa, "SPA", "React", "The UI")
+      Container(api, "API", "Node", "Business logic")
+      ContainerDb(db, "Database", "Postgres", "Stores data")
+    }
+    Rel(user, spa, "Uses")
+    Rel(spa, api, "Calls", "JSON/HTTP")
+    Rel(api, db, "Reads/Writes")`,
+  },
+
+  {
+    title: 'Architecture',
+    category: 'Architecture',
+    description: 'Grouped services with icons and side-anchored edges.',
+    source: `architecture-beta
+    group cloud(cloud)[Cloud]
+    service web(server)[Web] in cloud
+    service db(database)[DB] in cloud
+    service disk(disk)[Storage] in cloud
+    web:R -- L:db
+    db:B -- T:disk`,
+  },
+
+  {
+    title: 'Architecture: Junction',
+    category: 'Architecture',
+    description: 'A junction routing edges between services.',
+    source: `architecture-beta
+    group net(internet)[Network]
+    service gateway(server)[Gateway] in net
+    service api1(server)[API 1] in net
+    service api2(server)[API 2] in net
+    junction j in net
+    gateway:B -- T:j
+    j:L -- T:api1
+    j:R -- T:api2`,
+  },
+
+  {
+    title: 'Architecture: Nested Groups',
+    category: 'Architecture',
+    description: 'A region group nested inside a cloud group.',
+    source: `architecture-beta
+    group cloud(cloud)[Cloud]
+    group region(server)[Region A] in cloud
+    service web(server)[Web] in region
+    service db(database)[DB] in region
+    service cdn(internet)[CDN] in cloud
+    web:R --> L:db
+    cdn:L --> T:web`,
+  },
+
+  {
+    title: 'Architecture: Data Pipeline',
+    category: 'Architecture',
+    description: 'Ingestion → parallel workers → storage, with branching and fan-in.',
+    source: `architecture-beta
+    group ingestion(internet)[Ingestion]
+    group processing(cloud)[Processing]
+    group storage(disk)[Storage]
+    service api(server)[API] in ingestion
+    service stream(queue)[Stream] in ingestion
+    service w1(cpu)[Worker 1] in processing
+    service w2(cpu)[Worker 2] in processing
+    service cache(database)[Cache] in processing
+    service warehouse(database)[Warehouse] in storage
+    service archive(disk)[Archive] in storage
+    api:R --> L:stream
+    stream:R --> L:w1
+    stream:R --> L:w2
+    w1:R --> L:cache
+    w2:R --> L:warehouse
+    cache:R --> L:warehouse
+    warehouse:B --> T:archive`,
+  },
+
+  {
+    title: 'Architecture: Microservices',
+    category: 'Architecture',
+    description: 'Multiple groups — edge, services, and data tiers.',
+    source: `architecture-beta
+    group edge(internet)[Edge]
+    group svc(cloud)[Services]
+    group data(disk)[Data]
+    service gw(server)[Gateway] in edge
+    service users(server)[Users] in svc
+    service orders(server)[Orders] in svc
+    service cache(database)[Cache] in data
+    service db(database)[DB] in data
+    gw:R --> L:users
+    users:R --> L:orders
+    users:B --> T:cache
+    cache:R --> L:db
+    orders:B --> T:db`,
+  },
+
+  {
+    title: 'Event Modeling: Order Flow',
+    category: 'Event Modeling',
+    description: 'A fuller command/event/read-model sequence.',
+    source: `eventmodeling
+    title Order Placement
+    tf 01 ui OrderForm
+    tf 02 cmd PlaceOrder
+    tf 03 evt OrderPlaced
+    tf 04 pcr ChargeCard
+    tf 05 evt PaymentTaken
+    tf 06 rmo OrderStatus`,
+  },
+
+  {
+    title: 'ZenUML',
+    category: 'ZenUML',
+    description: 'Textual sequence DSL with method calls.',
+    source: `zenuml
+    Alice->Bob: Request
+    Bob.process()
+    Bob->Alice: Response`,
+  },
+
+  {
+    title: 'ZenUML: Login Flow',
+    category: 'ZenUML',
+    description: 'Annotators, nested calls, and returns.',
+    source: `zenuml
+    @Actor User
+    @Boundary LoginPage
+    @Control AuthService
+    @Database UserDB
+    User->LoginPage: enter credentials
+    LoginPage.authenticate(user, pass) {
+      AuthService.validate() {
+        UserDB.findUser()
+        return record
+      }
+      return token
+    }
+    LoginPage->User: show dashboard`,
+  },
+
+  {
+    title: 'ZenUML: Control Flow',
+    category: 'ZenUML',
+    description: 'Loop and alt fragments — beyond a flat message flow.',
+    source: `zenuml
+    @Actor User
+    participant Server
+    loop (3 times) {
+      User->Server: poll
+      alt (ready) {
+        Server->User: data
+      } else {
+        Server->User: wait
+      }
+    }`,
+  },
+
 ]
